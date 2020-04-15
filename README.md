@@ -7,6 +7,7 @@ Counter for the number of characters, words and lines,
 - A spell checker underlining misstyped words,
 - A tool that highlights all the words that you repeated more than 3 times,
 - Customizable tools, that can change the paramethers to find the repeated words.
+
 Obs.: The spell checker that I used in this program is the standard from the browser, so make shure that it's activated to work. (If you use google you can check here: chrome://settings/languages )
 
 Default settings:
