@@ -3,7 +3,7 @@ This is a website that is based on the ENEM's brazilian teste, it's site functio
 
 Here is some of the funcionalities that you will find:
 
-Counter for the number of characters, words and lines,
+- Counter for the number of characters, words and lines,
 - A spell checker underlining misstyped words,
 - A tool that highlights all the words that you repeated more than 3 times,
 - Customizable tools, that can change the paramethers to find the repeated words.
