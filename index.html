@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essay Helper</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/favicon.ico">
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71d977c20b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section class="box introduction">
+        <div class="box-body">
+            <h1>Bem Vindo</h1>
+            <p>Aqui você irá encontrar as melhores ferramentas para te ajudar a se tornar um exímio escritor
+                (pelo menos a nível ENEM 😄)</p>
+            <p>Você terá ferramentas que te mostrarão as palavras que você repetiu, destacará seus erros gramáticos além de te dizer o nº de linhas, palavras e letras gastos no seu texto.</p>
+            <p>NÃO ESPERE MAIS E COMECE AGORA!!!</p>
+            <div class="center"><button onclick="animateBox(this)" class="btn btn-large btn-start">Começar</button></div>
+        </div>
+    </section>
+
+    <section class="box info">
+        <div class="box-body">
+            <h1>Informações</h1>
+            <p>- Quando se copia algum texto ou se utiliza o botão formatar toda a paragrafação é perdida;</p>
+            <p>- Todas as palavras repetidas destacadas são colocadas em letras minúsculas;</p>
+            <p>- Dois espaços consecutivos são considerados pelo contador como uma nova palavra;</p>
+            <p>- O corretor ortográfico pode estar desativado, pois depende das configurações de seu navegador.<span class="mobile"> Certifique-se em liga-lo.</span><span class="desktop">Caso utilize o Google Chrome como browser, acesse <span class="a">chrome://settings/languages</span> e certifique-se que o corretor está ativo.</span></p>
+            <div class="center"><button class="btn btn-large btn-ok"
+                onclick="animateBox(this)">OK</button></div>
+        </div>
+    </section>
+
+    <section class="box settings">
+        <div class="box-body">
+            <div class="title">
+                <h1>Configurações</h1>
+                <p>Ajuste as configurações (caso deseje) e assim que estiver pronto, pressione o
+                    botão
+                    OK.</p>
+            </div>
+            <div class="settings-options">
+                <p>nº mínimo de letras na palavra para verificar repetições: <input id="minLength" value="3" type="number"></p>
+                <p>nº mínimo de repetições para destacar palavra: <input id="minNRepetitions" value="3" type="number"></p>
+                <div class="set-list">
+                    <p>Repetições são ignoradas para:</p>
+                    <ul>
+                        <li>- Artigos (Ex.: a, o, um...)</li>
+                        <li>- Pronomes demonstrativos (Ex.: este, esse...)</li>
+                        <li>- Outras palavras como "por", "para", "que" e "não".</li>
+                    </ul>
+                </div>
+                <p class="inline-block">Adicionar palavra à lista: <div class="input-btn"><input id="newBannedWord" type="text" onkeypress="banWord(event)"> <button id="btn-add" class="btn" onclick="banWord(event)"> + </button></div></p>
+                <p>Sua lista: <span id="yourList"></span></p>
+                <div class="center">
+                        <button class="btn btn-large btn-ok save" onclick="animateBox(this)">Salvar <i
+                            class="far fa-save"></i></button>
+                        <button class="btn btn-large btn-ok discard" onclick="animateBox(this), discard()">Descartar <i
+                            class="fas fa-times"></i></button>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main">
+        <div class="main-title center">
+            <h1>Essay Helper</h1>
+            <div class="main-title-btns">
+                <button id="btn-title-info" class="btn" onclick="animateBox(this)"><i
+                        class="fas fa-info-circle"></i></button>
+                <button id="btn-title-settings" class="btn" onclick="animateBox(this)"><i
+                        class="fas fa-cog"></i></button>
+            </div>
+        </div>
+        <div class="body">
+            <div class="mobile-center"><div id="txt-essay" contenteditable="true" spellcheck="true" onkeypress="main(event, this)" onclick="main(event, this)" onpaste="format(event)" onfocusout="main(event, this)">Digite sua redação aqui...</div></div>
+            <div class="data">
+                <h2>Informações</h2>
+                <p>Repetições</p>
+                <div id="repetitions-data">
+                </div>
+                <div class="small-data">
+                    <p id="carac">Caracteres: </p>
+                    <p id="words">Palavras: </p>
+                    <p id="lines">Linhas: </p>
+                </div>
+                <button class="desktop btn btn-large btn-verify" onclick= "main(event, this)">Verificar</button>
+                <button class="desktop btn btn-large btn-format" onclick="animateBox(this), format(event)">Formatar</button>
+                <button id="btn-leave" class="mobile btn btn-large" onclick="animateBox(this)">Sair</button>
+            </div>
+            <div class="mobile">
+                <button class="btn btn-full btn-verify" onclick="animateBox(this), main(event, this)">Verificar</button>
+                <button class="btn btn-full btn-format" onclick="animateBox(this), format(event)">Formatar</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
