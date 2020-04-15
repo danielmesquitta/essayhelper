@@ -11,7 +11,7 @@ Obs.: The spell checker that I used in this program is the standard from the bro
 
 Default settings:
 
-- Only hightlights words with 4 letters or more and with at least 3 repetitions,
+- Only hightlights words with 3 letters or more and with at least 3 repetitions,
 - Every 66 characters you write a new line is added to the counter.
 
 Thanks for your attention and don't lose any more time here, take a look at my site!
