@@ -100,18 +100,7 @@ export const Info = styled.div`
     }
 
     button {
-      display: block;
-      margin: auto;
-      padding: 7px 30px;
-      border: 1px solid #222;
-      border-radius: 5px;
-      background: ${colors.mainLight};
-      color: #fafafa;
-      transition: all 0.2s;
-
-      :hover {
-        background: ${darken(0.08, colors.mainLight)};
-      }
+      margin-bottom: 10px;
     }
   }
 `

@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Container } from './styles'
+import PopUp from '~/components/PopUp'
+import Button from '~/components/Button'
+import AlignCenter from '~/components/AlignCenter'
+import { colors } from '~/styles/variables'
 
 export default function Configs() {
   const [minWordLength, setMinWordLength] = useState(4)
@@ -13,8 +17,8 @@ export default function Configs() {
   }
 
   return (
-    <Container>
-      <div>
+    <PopUp>
+      <Container>
         <h1>Configurações</h1>
         <p>
           Ajuste as configurações (caso deseje) e assim que estiver pronto,
@@ -42,10 +46,19 @@ export default function Configs() {
         </ul>
 
         <div>
-          <Link to="/home">Ok</Link>
-          <button onClick={handleResetConfigs}>Resetar configuraçẽos</button>
+          <AlignCenter>
+            <Button background={colors.btnTransparent}>
+              <Link to="/home">Ok</Link>
+            </Button>
+
+            <Button background={colors.btnTransparent}>
+              <button onClick={handleResetConfigs}>
+                Resetar configuraçẽos
+              </button>
+            </Button>
+          </AlignCenter>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </PopUp>
   )
 }

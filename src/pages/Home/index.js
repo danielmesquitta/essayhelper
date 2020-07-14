@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom'
 import { MdInfoOutline, MdSettings } from 'react-icons/md'
 
 import { Header, Container, Essay, Info } from './styles'
+import Button from '~/components/Button'
+import AlignCenter from '~/components/AlignCenter'
+import { colors } from '~/styles/variables'
+
+import highlightWords from '~/services/highlightWords'
 import separateWords from '~/services/separateWords'
 import countWords from '~/services/countWords'
 
@@ -12,6 +17,7 @@ export default function Home() {
   const [wordsNumber, setWordsNumber] = useState(0)
   const [repeatedWords, setRepeatedWords] = useState([])
   const [hasRepetitions, setHasRepetitions] = useState(false)
+  const [isHighlighted, setIsHighlighted] = useState(false)
   const placeholder = 'Digite seu texto aqui...'
 
   useEffect(() => {
@@ -19,13 +25,14 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    repeatedWords.map(([key, value]) => {
-      if (value >= 3 && key.length >= 4) {
+    for (let i in repeatedWords) {
+      let [, repetitions] = repeatedWords[i]
+      if (repetitions >= 3) {
         setHasRepetitions(true)
-        return
+        break
       }
       setHasRepetitions(false)
-    })
+    }
   }, [repeatedWords])
 
   function handleEssayClick() {
@@ -37,6 +44,7 @@ export default function Home() {
   function handleEssayBlur() {
     if (input.innerText === '') {
       input.innerText = placeholder
+      setHasRepetitions(false)
     }
   }
 
@@ -44,11 +52,17 @@ export default function Home() {
     setEssay(input.innerText)
     const words = separateWords(essay)
     setWordsNumber(words.length)
+    setRepeatedWords(countWords(words))
   }
 
-  function verifyEssay() {
-    const words = separateWords(essay)
-    setRepeatedWords(countWords(words))
+  function highlightEssay() {
+    setIsHighlighted(true)
+    input.innerHTML = highlightWords(essay, repeatedWords)
+  }
+
+  function removeHighlights() {
+    input.innerText = input.innerText
+    setIsHighlighted(false)
   }
 
   return (
@@ -80,25 +94,20 @@ export default function Home() {
           <h2>Informações</h2>
 
           <div>
-            {hasRepetitions && input.innerText !== placeholder ? (
+            {hasRepetitions && input.innerText !== placeholder && (
               <>
                 <h3>Repetições</h3>
                 <ul>
-                  {repeatedWords.map(([key, value]) => {
+                  {repeatedWords.map(([word, repetitions]) => {
                     return (
-                      value >= 3 && (
+                      repetitions >= 3 && (
                         <li>
-                          <span>{key}:</span> {value} repeticões
+                          <span>{word}:</span> {repetitions} repetições
                         </li>
                       )
                     )
                   })}
                 </ul>
-              </>
-            ) : (
-              <>
-                <h3>Seu texto não possui palavras com mais de 2 repetições</h3>
-                <br />
               </>
             )}
 
@@ -114,7 +123,23 @@ export default function Home() {
               </li>
             </ul>
 
-            <button onClick={verifyEssay}>Verificar repetições</button>
+            {isHighlighted ? (
+              <AlignCenter>
+                <Button background={colors.mainLight}>
+                  <button onClick={removeHighlights}>Remover destaques</button>
+                </Button>
+              </AlignCenter>
+            ) : (
+              hasRepetitions && (
+                <AlignCenter>
+                  <Button background={colors.mainLight}>
+                    <button onClick={highlightEssay}>
+                      Destacar repetições
+                    </button>
+                  </Button>
+                </AlignCenter>
+              )
+            )}
           </div>
         </Info>
       </Container>

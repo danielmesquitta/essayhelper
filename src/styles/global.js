@@ -33,4 +33,17 @@ export default createGlobalStyle`
   ul{
     list-style: none;
   }
+
+  /*This project*/
+  .color0{background-color: yellow;}
+  .color1{background-color: hotpink;}
+  .color2{background-color: skyblue;}
+  .color3{background-color: yellowgreen;}
+  .color4{background-color: orange;}
+  .color5{background-color: mediumspringgreen;}
+  .color6{background-color: orangered;}
+  .color7{background-color: orchid;}
+  .color8{background-color: slateblue;}
+  .color9{background-color: tomato;}
+
 `
