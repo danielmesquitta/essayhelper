@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { Container, ConfigItem } from './styles'
+import { Container } from './styles'
 
 export default function Configs() {
+  const [minWordLength, setMinWordLength] = useState(4)
+  const [minRepetitionsPerWord, setMinRepetitionsPerWord] = useState(3)
+
+  function handleResetConfigs() {
+    setMinWordLength(4)
+    setMinRepetitionsPerWord(3)
+  }
+
   return (
     <Container>
       <div>
@@ -16,23 +24,26 @@ export default function Configs() {
         <ul>
           <li>
             <p>nº mínimo de letras na palavra para verificar repetições:</p>
-            <input />
+            <input
+              type="number"
+              value={minWordLength}
+              onChange={e => setMinWordLength(e.target.value)}
+            />
           </li>
 
           <li>
             <p>nº mínimo de repetições para destacar palavra:</p>
-            <input />
-          </li>
-
-          <li>
-            <p>Repetições são ignoradas para:</p>
-            <input />
+            <input
+              type="number"
+              value={minRepetitionsPerWord}
+              onChange={e => setMinRepetitionsPerWord(e.target.value)}
+            />
           </li>
         </ul>
 
         <div>
           <Link to="/home">Ok</Link>
-          <button>Resetar configuraçẽos</button>
+          <button onClick={handleResetConfigs}>Resetar configuraçẽos</button>
         </div>
       </div>
     </Container>

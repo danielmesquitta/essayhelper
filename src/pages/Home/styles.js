@@ -3,33 +3,43 @@ import { colors } from '~/styles/variables'
 import { darken } from 'polished'
 
 export const Header = styled.header`
-  background: linear-gradient(
-    to right,
-    ${colors.mainLight},
-    ${colors.mainDark}
-  );
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  box-shadow: 0 0 10px #333;
   padding: 5px 10px;
   text-align: center;
 
   display: flex;
 
   > div {
+    position: fixed;
+    right: 20px;
+    top: 16px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100px;
+    width: 120px;
   }
 
   h1 {
     flex: 1;
-    font-size: 28px;
+    font-size: 40px;
+    text-shadow: 0 0 5px black;
     padding: 5px 10px;
     color: #fafafa;
+  }
+
+  a {
+    background: linear-gradient(
+      to right,
+      ${colors.mainLight},
+      ${colors.mainDark}
+    );
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `
 
@@ -84,7 +94,7 @@ export const Info = styled.div`
       li {
         display: flex;
         justify-content: space-between;
-        padding: 2px;
+        padding: 12px 0 6px;
         border-bottom: 2px dashed #0001;
       }
     }

@@ -46,11 +46,12 @@ export const Container = styled.section`
         }
 
         input {
+          text-align: center;
           background: #0000002a;
           border: 1px solid #777;
           color: #fafafa;
           border-radius: 5px;
-          width: 50px;
+          width: 60px;
           padding: 2px 5px;
         }
       }
