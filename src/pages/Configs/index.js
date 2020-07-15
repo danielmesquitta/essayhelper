@@ -48,7 +48,11 @@ export default function Configs() {
         <div>
           <AlignCenter>
             <Button background={colors.btnTransparent}>
-              <Link to="/home">Ok</Link>
+              <Link
+                to={`/home?mwl=${minWordLength}&mrpw=${minRepetitionsPerWord}`}
+              >
+                Ok
+              </Link>
             </Button>
 
             <Button background={colors.btnTransparent}>

@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { colors } from '~/styles/variables'
-import { darken } from 'polished'
 
 export const Header = styled.header`
   padding: 5px 10px;

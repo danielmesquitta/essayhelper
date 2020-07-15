@@ -7,7 +7,7 @@ import Button from '~/components/Button'
 import AlignCenter from '~/components/AlignCenter'
 import PopUp from '~/components/PopUp'
 
-export default function Info() {
+export default function Info({ location }) {
   return (
     <PopUp>
       <Container>
@@ -24,7 +24,7 @@ export default function Info() {
 
         <AlignCenter>
           <Button background={colors.btnTransparent}>
-            <Link to="/home">Voltar</Link>
+            <Link to={`/home${location.search}`}>Voltar</Link>
           </Button>
         </AlignCenter>
         <p></p>

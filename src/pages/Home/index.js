@@ -11,7 +11,22 @@ import highlightWords from '~/services/highlightWords'
 import separateWords from '~/services/separateWords'
 import countWords from '~/services/countWords'
 
-export default function Home() {
+export default function Home({ location }) {
+  // convert query params to constants
+  const {
+    mwl: minWordLength,
+    mrpw: minRepetitionsPerWord,
+  } = Object.fromEntries(
+    location.search
+      .replace('?', '')
+      .split('&')
+      .map(query => {
+        let keyAndValue = query.split('=')
+        keyAndValue[1] = Number(keyAndValue[1])
+        return keyAndValue
+      })
+  )
+
   const [input, setInput] = useState(<div />)
   const [essay, setEssay] = useState('')
   const [wordsNumber, setWordsNumber] = useState(0)
@@ -27,13 +42,13 @@ export default function Home() {
   useEffect(() => {
     for (let i in repeatedWords) {
       let [, repetitions] = repeatedWords[i]
-      if (repetitions >= 3) {
+      if (repetitions >= (minRepetitionsPerWord || 3)) {
         setHasRepetitions(true)
         break
       }
       setHasRepetitions(false)
     }
-  }, [repeatedWords])
+  }, [repeatedWords, minRepetitionsPerWord])
 
   function handleEssayClick() {
     if (input.innerText === placeholder) {
@@ -52,12 +67,16 @@ export default function Home() {
     setEssay(input.innerText)
     const words = separateWords(essay)
     setWordsNumber(words.length)
-    setRepeatedWords(countWords(words))
+    setRepeatedWords(countWords(words, minWordLength))
   }
 
   function highlightEssay() {
     setIsHighlighted(true)
-    input.innerHTML = highlightWords(essay, repeatedWords)
+    input.innerHTML = highlightWords(
+      essay,
+      repeatedWords,
+      minRepetitionsPerWord
+    )
   }
 
   function removeHighlights() {
@@ -70,7 +89,7 @@ export default function Home() {
       <Header>
         <h1>Essay Helper</h1>
         <div>
-          <Link to="/info">
+          <Link to={`/info${location.search}`}>
             <MdInfoOutline color="#fff" size={32} />
           </Link>
 
@@ -100,7 +119,7 @@ export default function Home() {
                 <ul>
                   {repeatedWords.map(([word, repetitions]) => {
                     return (
-                      repetitions >= 3 && (
+                      repetitions >= (minRepetitionsPerWord || 3) && (
                         <li>
                           <span>{word}:</span> {repetitions} repetições
                         </li>
