@@ -4,6 +4,6 @@ export const Container = styled.div`
   text-align: center;
 
   p {
-    margin: 20px 0;
+    margin: 2rem 0;
   }
 `

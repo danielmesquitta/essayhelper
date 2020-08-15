@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { Container } from './styles'
 import { colors } from '~/styles/variables'
+
 import Button from '~/components/Button'
 import AlignCenter from '~/components/AlignCenter'
 import PopUp from '~/components/PopUp'

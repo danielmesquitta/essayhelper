@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import { colors } from '~/styles/variables'
 import { Container } from './styles'
+
 import Button from '~/components/Button'
 import PopUp from '~/components/PopUp'
-import { colors } from '~/styles/variables'
 
 export default function Introduction() {
   return (

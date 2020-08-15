@@ -4,15 +4,15 @@ import { darken } from 'polished'
 
 export const Container = styled.span`
   display: inline-block;
-  margin: 0 5px;
+  margin: 0 .5rem;
   text-align: center;
 
   a,
   button {
     border: 1px solid #222;
-    border-radius: 5px;
+    border-radius: .5rem;
     background: ${props => props.background};
-    padding: 7px 30px;
+    padding: .7rem 3rem;
     color: #fafafa !important;
     transition: all 0.2s;
 

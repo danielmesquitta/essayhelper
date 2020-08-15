@@ -9,20 +9,20 @@ export const Container = styled.div`
   height: 100vh;
 
   > div {
-    max-width: 700px;
+    max-width: 70rem;
     background: linear-gradient(
       to right,
       ${colors.mainLight},
       ${colors.mainDark}
     );
-    padding: 60px;
-    border-radius: 5px;
-    box-shadow: 0 0 40px black;
+    padding: 6rem;
+    border-radius: .5rem;
+    box-shadow: 0 0 4rem black;
 
     h1 {
       color: #fafafa;
       text-align: center;
-      margin: 0 auto 30px;
+      margin: 0 auto 3rem;
     }
 
     p {

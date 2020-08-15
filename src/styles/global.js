@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import background from '~/assets/background.png'
+import { breakpoints } from './variables'
 
 export default createGlobalStyle`
   /*Default*/
@@ -11,6 +12,19 @@ export default createGlobalStyle`
     outline: 0;
     box-sizing: border-box;
   }
+  html{
+    scroll-behavior: smooth;
+    font-size: 62.5%; /*1rem === 10px*/
+    @media screen and (max-width: ${breakpoints.large}) {
+      font-size: 56.25%;
+    }
+    @media screen and (max-width: ${breakpoints.medium}) {
+      font-size: 50%;
+    }
+    @media screen and (min-width: ${breakpoints.huge}) {
+      font-size: 75%;
+    }
+  }  
   html, body, #root{
     min-height: 100%;
   }
@@ -21,7 +35,7 @@ export default createGlobalStyle`
   }
   body, input, button{
     font-family: 'Roboto', Arial, Helvetica, sans-serif; 
-    font-size: 16px;
+    font-size: 1.6rem;
   }
   button{
     cursor: pointer;

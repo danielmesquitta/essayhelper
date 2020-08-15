@@ -2,26 +2,26 @@ import styled from 'styled-components'
 import { colors } from '~/styles/variables'
 
 export const Header = styled.header`
-  padding: 5px 10px;
+  padding: .5rem 1rem;
   text-align: center;
 
   display: flex;
 
   > div {
     position: fixed;
-    right: 20px;
-    top: 16px;
+    right: 2rem;
+    top: 1.6rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 120px;
+    width: 12rem;
   }
 
   h1 {
     flex: 1;
-    font-size: 40px;
-    text-shadow: 0 0 5px black;
-    padding: 5px 10px;
+    font-size: 4rem;
+    text-shadow: 0 0 .5rem black;
+    padding: .5rem 1rem;
     color: #fafafa;
   }
 
@@ -31,10 +31,10 @@ export const Header = styled.header`
       ${colors.mainLight},
       ${colors.mainDark}
     );
-    height: 40px;
-    width: 40px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px black;
+    height: 4rem;
+    width: 4rem;
+    border-radius: .5rem;
+    box-shadow: 0 0 .5rem black;
 
     display: flex;
     align-items: center;
@@ -43,27 +43,27 @@ export const Header = styled.header`
 `
 
 export const Container = styled.div`
-  margin: 30px 0;
+  margin: 3rem 0;
 
   display: flex;
   justify-content: space-evenly;
 `
 
 export const Essay = styled.div`
-  padding: 40px;
-  width: 675px;
+  padding: 4rem;
+  width: 67.5rem;
   background: #fafafaee;
   color: #222;
-  min-height: 900px;
-  border-radius: 2px;
-  box-shadow: 0 0 10px #333;
+  min-height: 90rem;
+  border-radius: .2rem;
+  box-shadow: 0 0 1rem #333;
 `
 
 export const Info = styled.div`
   background: #fafafa;
-  width: 350px;
+  width: 35rem;
   align-self: flex-start;
-  border-radius: 15px;
+  border-radius: 1.5rem;
   overflow: hidden;
 
   h2 {
@@ -76,11 +76,11 @@ export const Info = styled.div`
     color: #fafafa;
     text-align: center;
     font-weight: normal;
-    padding: 10px 0;
+    padding: 1rem 0;
   }
 
   > div {
-    padding: 40px 30px;
+    padding: 4rem 3rem;
 
     h3 {
       font-weight: normal;
@@ -88,18 +88,18 @@ export const Info = styled.div`
     }
 
     ul {
-      margin: 5px 0 25px;
+      margin: .5rem 0 2.5rem;
 
       li {
         display: flex;
         justify-content: space-between;
-        padding: 12px 0 6px;
-        border-bottom: 2px dashed #0001;
+        padding: 1.2rem 0 .6rem;
+        border-bottom: .2rem dashed #0001;
       }
     }
 
     button {
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
     }
   }
 `

@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom'
 import { MdInfoOutline, MdSettings } from 'react-icons/md'
 
 import { Header, Container, Essay, Info } from './styles'
-import Button from '~/components/Button'
-import AlignCenter from '~/components/AlignCenter'
 import { colors } from '~/styles/variables'
 
-import highlightWords from '~/services/highlightWords'
-import separateWords from '~/services/separateWords'
-import countWords from '~/services/countWords'
+import Button from '~/components/Button'
+import AlignCenter from '~/components/AlignCenter'
+
+import highlightWords from '~/utils/highlightWords'
+import separateWords from '~/utils/separateWords'
+import countWords from '~/utils/countWords'
 
 export default function Home({ location }) {
   // convert query params to constants
