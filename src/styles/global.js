@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
-import background from '~/assets/background.png'
-import { breakpoints } from './variables'
+import { createGlobalStyle } from "styled-components";
+import background from "~/assets/background.png";
+import { breakpoints } from "./variables";
 
 export default createGlobalStyle`
   /*Default*/
@@ -15,12 +15,7 @@ export default createGlobalStyle`
   html{
     scroll-behavior: smooth;
     font-size: 62.5%; /*1rem === 10px*/
-    @media screen and (max-width: ${breakpoints.large}) {
-      font-size: 56.25%;
-    }
-    @media screen and (max-width: ${breakpoints.medium}) {
-      font-size: 50%;
-    }
+
     @media screen and (min-width: ${breakpoints.huge}) {
       font-size: 75%;
     }
@@ -60,4 +55,4 @@ export default createGlobalStyle`
   .color8{background-color: slateblue;}
   .color9{background-color: tomato;}
 
-`
+`;

@@ -1,23 +1,22 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-import { Container } from './styles'
-import { colors } from '~/styles/variables'
+import { Container } from "./styles";
+import { colors } from "~/styles/variables";
 
-import Button from '~/components/Button'
-import AlignCenter from '~/components/AlignCenter'
-import PopUp from '~/components/PopUp'
+import Button from "~/components/Button";
+import AlignCenter from "~/components/AlignCenter";
+import PopUp from "~/components/PopUp";
 
 export default function Info({ location }) {
   return (
     <PopUp>
       <Container>
-        <h1>Info</h1>
+        <h1>Observações</h1>
         <p>
-          Para ativar verificação ortográfica, acesse as configuraçoes do seu
-          navegador em <a>chrome://settings/languages</a>
+          Cerifique-se que o corretor ortográfico do seu navegador está ativo.
         </p>
-        <h3>Observações</h3>
+
         <p>
           Ao destacar as palavras repetidas, elas são convertidas para letras
           minúsculas e toda paragrafação é perdida.
@@ -31,5 +30,5 @@ export default function Info({ location }) {
         <p></p>
       </Container>
     </PopUp>
-  )
+  );
 }

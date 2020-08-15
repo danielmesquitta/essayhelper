@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { colors } from '~/styles/variables'
+import styled from "styled-components";
+import { colors, breakpoints } from "~/styles/variables";
 
 export const Container = styled.div`
   display: flex;
@@ -9,6 +9,7 @@ export const Container = styled.div`
   height: 100vh;
 
   > div {
+    width: 100%;
     max-width: 70rem;
     background: linear-gradient(
       to right,
@@ -16,7 +17,7 @@ export const Container = styled.div`
       ${colors.mainDark}
     );
     padding: 6rem;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     box-shadow: 0 0 4rem black;
 
     h1 {
@@ -28,5 +29,13 @@ export const Container = styled.div`
     p {
       color: #fafafa;
     }
+
+    @media screen and (max-width: ${breakpoints.small}) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+      padding: 1.5rem;
+    }
   }
-`
+`;
