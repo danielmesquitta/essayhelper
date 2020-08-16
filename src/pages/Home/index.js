@@ -56,6 +56,7 @@ export default function Home({ location }) {
     if (input.innerText === placeholder) {
       input.innerText = "";
     }
+    setShowMenu(false);
   }
 
   function handleEssayBlur() {
@@ -85,6 +86,7 @@ export default function Home({ location }) {
   function removeHighlights() {
     input.innerText = input.innerText;
     setIsHighlighted(false);
+    setShowMenu(false);
   }
 
   return (
