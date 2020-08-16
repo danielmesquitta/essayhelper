@@ -4,6 +4,8 @@
 
 This website was created as a personal project, to help me and my friends with the ENEM's essay, showing us our mistakes while writting.
 
+<br>
+
 <p align="center">
   <img src="presentation.gif"/>
 </p>
