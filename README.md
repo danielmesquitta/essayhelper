@@ -3,6 +3,8 @@
 ## Description
 This website was created as a personal project, to help me and my friends with the ENEM's essay, showing us our mistakes while writting.
 
+<img src="presentation.gif" height="50%"/>
+
 ## Functionalities
 
 - Counter for the number of characters, words and lines,
