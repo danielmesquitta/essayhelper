@@ -1,9 +1,12 @@
 # Essay Helper
 
 ## Description
+
 This website was created as a personal project, to help me and my friends with the ENEM's essay, showing us our mistakes while writting.
 
-<img src="presentation.gif" height="50%"/>
+<p align="center">
+  <img src="presentation.gif"/>
+</p>
 
 ## Functionalities
 
@@ -33,7 +36,6 @@ Obs.: The spell checker that I used in this program is the default from the brow
 
 - [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/)
 - [git](https://git-scm.com/)
-- [React Native development environment](https://reactnative.dev/docs/environment-setup)
 
 ## Run the project
 
