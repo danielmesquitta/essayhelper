@@ -2,7 +2,10 @@
 
 ## Description
 
-This website was created as a personal project, to help me and my friends with the ENEM's essay, showing us our mistakes while writting.
+The reason I started to code, a first project which aimed to help the lives of my classmates, as well as mine.
+
+This was created as a personal project, with the goal to help people on the ENEM's essay counting number of characters, words and lines, using a spell checker underlining miss-typed words and
+highlighting all the words that you repeated more than 3 times, being all customizable with parameters that can be changed.
 
 <br>
 
