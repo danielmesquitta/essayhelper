@@ -7,7 +7,7 @@ This website was created as a personal project, to help me and my friends with t
 <br>
 
 <p align="center">
-  <img src="presentation.gif"/>
+  <img src="presentation.gif" width="200px"/>
 </p>
 
 ## Functionalities
